@@ -1,6 +1,7 @@
 # flutter_clean_architecture
 
-A new Flutter project.
+Clean Architecture Temelleri Atılıyor.
+5 Ekim 2021 -> Base State kavramı öğrenildi.
 
 ## Getting Started
 
