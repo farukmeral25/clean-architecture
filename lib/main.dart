@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_clean_architecture/core/constant/theme/appTheme/app_theme.dart';
+import 'package:flutter_clean_architecture/core/constant/theme/theme_provider.dart';
+import 'package:provider/provider.dart';
 import 'feature/authenticate/login/login.dart';
 
 void main() {
-  runApp(const CleanArchitectureApp());
+  WidgetsFlutterBinding.ensureInitialized();
+
+  runApp(
+    MultiProvider(
+      providers: [ChangeNotifierProvider<ThemeProvider>(create: (_) => ThemeProvider())],
+      child: const CleanArchitectureApp(),
+    ),
+  );
 }
 
 class CleanArchitectureApp extends StatelessWidget {
@@ -11,12 +21,16 @@ class CleanArchitectureApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Clean Architecture',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const LoginPage(),
+    return Consumer<ThemeProvider>(
+      builder: (BuildContext context, ThemeProvider themeProvider, Widget? widget) {
+        return MaterialApp(
+          title: 'Flutter Clean Architecture',
+          themeMode: themeProvider.themeMode,
+          theme: AppTheme.lightTheme,
+          darkTheme: AppTheme.darkTheme,
+          home: const LoginPage(),
+        );
+      },
     );
   }
 }
