@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'dart:ui';
 
 class AppColor {
   static Color white = const Color(0xFFFFFFFF);
