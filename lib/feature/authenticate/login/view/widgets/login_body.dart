@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_architecture/core/base/base.dart';
-import 'package:flutter_clean_architecture/core/base/view/base_view.dart';
+
 import 'package:flutter_clean_architecture/core/constant/theme/appTheme/app_color.dart';
 import 'package:flutter_clean_architecture/core/constant/theme/theme_provider.dart';
 import 'package:provider/provider.dart';
