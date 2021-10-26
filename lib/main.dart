@@ -3,10 +3,11 @@ import 'package:flutter_clean_architecture/core/constant/theme/appTheme/app_them
 import 'package:flutter_clean_architecture/core/constant/theme/theme_provider.dart';
 import 'package:provider/provider.dart';
 import 'feature/authenticate/login/login.dart';
+import 'core/init/injection_container.dart' as dependencyInjection;
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  await dependencyInjection.init();
   runApp(
     MultiProvider(
       providers: [ChangeNotifierProvider<ThemeProvider>(create: (_) => ThemeProvider())],
