@@ -1,10 +1,10 @@
-enum SharedPreferencesKeys { SEARCH }
+enum SharedPreferencesKeys { LOGIN }
 
 extension SharedPreferencesKeysExtension on SharedPreferencesKeys {
   String sharedKeyStateToKeyValues() {
     switch (this) {
-      case SharedPreferencesKeys.SEARCH:
-        return "SEARCH";
+      case SharedPreferencesKeys.LOGIN:
+        return "LOGIN";
     }
   }
 }

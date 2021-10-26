@@ -31,6 +31,7 @@ class SharedPreferencesRepositoryImpl implements SharedPreferencesRepository {
   @override
   Future<Either<Failure, void>> saveDataFromKey(SharedPreferencesKeys key, String data) async {
     bool saveData = await sharedPreferences.setString(key.sharedKeyStateToKeyValues(), data);
+
     if (saveData) {
       return const Right(null);
     } else {
