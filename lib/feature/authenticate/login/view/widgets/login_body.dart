@@ -70,6 +70,8 @@ class _LoginBodyState extends BaseState<LoginBody> {
                 onTap: () {
                   if (formKey.currentState!.validate()) {
                     serviceLocator<LoginProvider>().cacheUserInfo();
+                    serviceLocator<LoginProvider>().textEditingControllerEmail.text = '';
+                    serviceLocator<LoginProvider>().textEditingControllerPassword.text = '';
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (BuildContext context) => const HomePage()),

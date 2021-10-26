@@ -41,7 +41,8 @@ class _SplashScreenState extends State<SplashScreen> {
                     );
                   }
                 },
-                child: Container(height: 200, width: 200, color: Colors.pink, child: const Text('giriş')));
+                child:
+                    Container(height: 200, width: 200, color: Colors.pink, child: const Center(child: Text('giriş'))));
           },
         ),
       ),

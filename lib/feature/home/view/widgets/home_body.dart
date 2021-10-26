@@ -3,7 +3,11 @@ import 'package:flutter_clean_architecture/core/base/base.dart';
 
 import 'package:flutter_clean_architecture/core/constant/theme/appTheme/app_color.dart';
 import 'package:flutter_clean_architecture/core/constant/theme/theme_provider.dart';
+import 'package:flutter_clean_architecture/core/init/injection_container.dart';
+import 'package:flutter_clean_architecture/feature/authenticate/login/viewmodel/login_provider.dart';
 import 'package:provider/provider.dart';
+
+import '../../../features.dart';
 
 class HomeBody extends StatefulWidget {
   const HomeBody({Key? key}) : super(key: key);
@@ -38,6 +42,22 @@ class _HomeBodyState extends BaseState<HomeBody> {
                 },
               );
             },
+          ),
+          GestureDetector(
+            onTap: () {
+              serviceLocator<LoginProvider>().removeUserInfo();
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (BuildContext context) => const LoginPage()),
+                ModalRoute.withName('/loginPage'),
+              );
+            },
+            child: Container(
+              height: 50,
+              width: 200,
+              color: AppColor.grey,
+              child: const Center(child: Text('Çıkış Yap')),
+            ),
           ),
         ],
       ),
