@@ -1,7 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_clean_architecture/core/constant/route.dart';
-import 'package:flutter_clean_architecture/core/keys/global_key.dart';
 import 'package:flutter_clean_architecture/core/usecase/usecase.dart';
 import 'package:flutter_clean_architecture/feature/authenticate/login/domain/entities/argument/user_argument.dart';
 import 'package:flutter_clean_architecture/feature/authenticate/login/domain/entities/user_info.dart';
