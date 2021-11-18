@@ -3,9 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_architecture/core/constant/theme/appTheme/app_text_style.dart';
 import 'package:flutter_clean_architecture/core/init/injection_container.dart';
-import 'package:flutter_clean_architecture/feature/jobs/view/widgets/developer_filter_card.dart';
-import 'package:flutter_clean_architecture/feature/jobs/view/widgets/developer_recenlty_added_card.dart';
-import 'package:flutter_clean_architecture/feature/jobs/view/widgets/developer_recommended_for_you_card.dart';
+import 'package:flutter_clean_architecture/feature/jobs/view/widgets/developer_jobs_page_widgets/cards/developer_filter_card.dart';
+import 'package:flutter_clean_architecture/feature/jobs/view/widgets/developer_jobs_page_widgets/cards/developer_recenlty_added_card.dart';
+import 'package:flutter_clean_architecture/feature/jobs/view/widgets/developer_jobs_page_widgets/cards/developer_recommended_for_you_card.dart';
 import 'package:flutter_clean_architecture/feature/jobs/viewmodel/jobs_provider.dart';
 import 'package:provider/provider.dart';
 
