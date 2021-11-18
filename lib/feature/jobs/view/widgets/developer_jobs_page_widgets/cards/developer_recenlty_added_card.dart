@@ -25,8 +25,15 @@ class DeveloperRecenltyAddedCard extends StatelessWidget {
                 height: 40,
                 width: 40,
               ),
-              title: Text(jobsProvider.jobAdvertisement[index].jobTitle),
-              subtitle: Text(jobsProvider.jobAdvertisement[index].companyName),
+              title: Text(
+                jobsProvider.jobAdvertisement[index].jobTitle,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+              subtitle: Text(
+                jobsProvider.jobAdvertisement[index].companyName,
+                maxLines: 1,
+              ),
               trailing: Text(
                 jobsProvider.jobAdvertisement[index].jobPrice,
                 style: AppTextStyle.subTitleStyle.copyWith(

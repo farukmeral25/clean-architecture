@@ -28,7 +28,7 @@ class JobsProvider with ChangeNotifier {
       jobId: 3,
       jobImagePath:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/505px-Apple_logo_black.svg.png",
-      jobTitle: "Lead Backend Developer",
+      jobTitle: "Lead - Middle Backend Developer",
       jobPrice: "80₺/h",
       companyName: 'Apple',
       workingTime: "Remote",

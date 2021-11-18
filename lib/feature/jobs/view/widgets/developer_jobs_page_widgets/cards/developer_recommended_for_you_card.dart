@@ -64,6 +64,8 @@ class DeveloperRecommendedForYouCard extends StatelessWidget {
         children: [
           Text(
             jobsProvider.jobAdvertisement[index].jobTitle,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: AppTextStyle.filterTextStyle,
           ),
           SizedBox(
