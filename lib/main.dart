@@ -36,7 +36,7 @@ class CleanArchitectureApp extends StatelessWidget {
           themeMode: themeProvider.themeMode,
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
-          home: const DeveloperJobsPage(),
+          home: const SplashScreen(),
         );
       },
     );
