@@ -9,6 +9,7 @@ import 'package:flutter_clean_architecture/feature/authenticate/login/domain/use
 
 class LoginProvider with ChangeNotifier {
   final GetDataUserUsecase getDataUser;
+  //!
   final RemoveDataUserUsecase removeDataUser;
   final SaveDataUserUsecase saveDataUser;
   TextEditingController textEditingControllerEmail = TextEditingController();
@@ -39,6 +40,7 @@ class LoginProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  //Delete
   void removeUserInfo() {
     removeDataUser(const NoParams()).then((removeDataUserEither) {
       removeDataUserEither.fold((failure) => Left(failure), (removeDataUser) => const Right(null));

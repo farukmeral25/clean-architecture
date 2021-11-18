@@ -5,6 +5,7 @@ import 'package:flutter_clean_architecture/core/constant/theme/appTheme/app_colo
 import 'package:flutter_clean_architecture/core/constant/theme/theme_provider.dart';
 import 'package:flutter_clean_architecture/core/init/injection_container.dart';
 import 'package:flutter_clean_architecture/feature/authenticate/login/viewmodel/login_provider.dart';
+import 'package:flutter_clean_architecture/feature/jobs/view/pages/developer_jobs_page.dart';
 import 'package:provider/provider.dart';
 
 import '../../../features.dart';
@@ -48,6 +49,25 @@ class _HomeBodyState extends BaseState<HomeBody> {
               serviceLocator<LoginProvider>().removeUserInfo();
               Navigator.pushAndRemoveUntil(
                 context,
+                MaterialPageRoute(builder: (BuildContext context) => const DeveloperJobsPage()),
+                ModalRoute.withName('/developerJobsPage'),
+              );
+            },
+            child: Container(
+              height: 50,
+              width: 200,
+              color: AppColor.blue,
+              child: const Center(child: Text('DeveloperJobsPage')),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          GestureDetector(
+            onTap: () {
+              serviceLocator<LoginProvider>().removeUserInfo();
+              Navigator.pushAndRemoveUntil(
+                context,
                 MaterialPageRoute(builder: (BuildContext context) => const LoginPage()),
                 ModalRoute.withName('/loginPage'),
               );
@@ -59,6 +79,18 @@ class _HomeBodyState extends BaseState<HomeBody> {
               child: const Center(child: Text('Çıkış Yap')),
             ),
           ),
+          const SizedBox(
+            height: 20,
+          ),
+          GestureDetector(
+            onTap: () {},
+            child: Container(
+              color: AppColor.grey.withOpacity(.4),
+              child: const Center(
+                child: Text('ListPage'),
+              ),
+            ),
+          )
         ],
       ),
     );
