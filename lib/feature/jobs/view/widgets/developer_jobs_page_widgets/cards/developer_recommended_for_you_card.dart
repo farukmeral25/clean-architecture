@@ -35,7 +35,7 @@ class DeveloperRecommendedForYouCard extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Image.network(
-          jobsProvider.jobAdvertisement[index].jobImagePath,
+          jobsProvider.jobAdvertisement[index].job.jobImagePath,
           height: 60,
           width: 60,
         ),
@@ -47,7 +47,7 @@ class DeveloperRecommendedForYouCard extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 2),
             child: Text(
-              jobsProvider.jobAdvertisement[index].workingTime,
+              jobsProvider.jobAdvertisement[index].job.workingTime,
               style: AppTextStyle.body12w500,
             ),
           ),
@@ -63,7 +63,7 @@ class DeveloperRecommendedForYouCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            jobsProvider.jobAdvertisement[index].jobTitle,
+            jobsProvider.jobAdvertisement[index].job.jobTitle,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: AppTextStyle.filterTextStyle,
@@ -72,7 +72,7 @@ class DeveloperRecommendedForYouCard extends StatelessWidget {
             height: 10,
           ),
           Text(
-            jobsProvider.jobAdvertisement[index].jobPrice,
+            jobsProvider.jobAdvertisement[index].job.jobPrice,
             style: AppTextStyle.subTitleStyle,
           ),
         ],

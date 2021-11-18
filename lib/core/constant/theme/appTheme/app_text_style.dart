@@ -19,6 +19,11 @@ class AppTextStyle {
     fontSize: 12,
     fontWeight: FontWeight.w500,
   );
+  static TextStyle body14w700 = TextStyle(
+    color: AppColor.black,
+    fontSize: 14,
+    fontWeight: FontWeight.w700,
+  );
   static TextStyle filterTextStyle = TextStyle(
     color: AppColor.black,
     fontSize: 14,

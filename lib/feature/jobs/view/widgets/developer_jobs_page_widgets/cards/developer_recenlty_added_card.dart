@@ -21,21 +21,21 @@ class DeveloperRecenltyAddedCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 4.0),
             child: ListTile(
               leading: Image.network(
-                jobsProvider.jobAdvertisement[index].jobImagePath,
+                jobsProvider.jobAdvertisement[index].job.jobImagePath,
                 height: 40,
                 width: 40,
               ),
               title: Text(
-                jobsProvider.jobAdvertisement[index].jobTitle,
+                jobsProvider.jobAdvertisement[index].job.jobTitle,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
               subtitle: Text(
-                jobsProvider.jobAdvertisement[index].companyName,
+                jobsProvider.jobAdvertisement[index].job.companyName,
                 maxLines: 1,
               ),
               trailing: Text(
-                jobsProvider.jobAdvertisement[index].jobPrice,
+                jobsProvider.jobAdvertisement[index].job.jobPrice,
                 style: AppTextStyle.subTitleStyle.copyWith(
                   color: AppColor.grey,
                 ),

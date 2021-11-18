@@ -4,6 +4,7 @@ import 'package:flutter_clean_architecture/core/constant/theme/theme_provider.da
 import 'package:flutter_clean_architecture/feature/authenticate/login/viewmodel/login_provider.dart';
 import 'package:flutter_clean_architecture/feature/authenticate/splash/splash.dart';
 import 'package:flutter_clean_architecture/feature/jobs/view/pages/developer_jobs_page.dart';
+import 'package:flutter_clean_architecture/feature/jobs/view/pages/developer_your_application_page.dart';
 import 'package:flutter_clean_architecture/feature/jobs/viewmodel/jobs_provider.dart';
 import 'package:provider/provider.dart';
 import 'core/init/injection_container.dart' as dependencyInjection;
@@ -36,7 +37,7 @@ class CleanArchitectureApp extends StatelessWidget {
           themeMode: themeProvider.themeMode,
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
-          home: const SplashScreen(),
+          home: const DeveloperYourApplicationPage(),
         );
       },
     );
