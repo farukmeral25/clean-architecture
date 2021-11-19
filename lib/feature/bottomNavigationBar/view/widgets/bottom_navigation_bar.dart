@@ -27,62 +27,8 @@ class BottomNavigationBarWidget extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  GestureDetector(
-                    onTap: () {
-                      bottomNavigationBarProvider.currentIndex = 0;
-                      bottomNavigationBarProvider.visible = true;
-                    },
-                    child: Container(
-                      height: 75,
-                      width: (MediaQuery.of(context).size.width - 50) / 2,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Text(
-                            'Jobs',
-                            style: AppTextStyle.body14w700.copyWith(
-                              color: bottomNavigationBarProvider.visible ? AppColor.black : AppColor.grey,
-                            ),
-                          ),
-                          Visibility(
-                            visible: bottomNavigationBarProvider.visible,
-                            child: CircleAvatar(
-                              backgroundColor: AppColor.black,
-                              radius: 4,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      bottomNavigationBarProvider.currentIndex = 1;
-                      bottomNavigationBarProvider.visible = false;
-                    },
-                    child: Container(
-                      height: 75,
-                      width: (MediaQuery.of(context).size.width - 50) / 2,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Text(
-                            'Applications',
-                            style: AppTextStyle.body14w700.copyWith(
-                              color: !bottomNavigationBarProvider.visible ? AppColor.black : AppColor.grey,
-                            ),
-                          ),
-                          Visibility(
-                            visible: !bottomNavigationBarProvider.visible,
-                            child: CircleAvatar(
-                              backgroundColor: AppColor.black,
-                              radius: 4,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  bottomNavigationBarJobButton(bottomNavigationBarProvider, context),
+                  bottomNavigationApplicationsButton(bottomNavigationBarProvider, context),
                 ],
               ),
             ),
@@ -91,4 +37,51 @@ class BottomNavigationBarWidget extends StatelessWidget {
       },
     );
   }
+
+  Widget bottomNavigationApplicationsButton(
+      BottomNavigationBarProvider bottomNavigationBarProvider, BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        bottomNavigationBarProvider.currentIndex = 1;
+        bottomNavigationBarProvider.visible = false;
+      },
+      child: buttonNavBar(context, bottomNavigationBarProvider, 'Applications', !bottomNavigationBarProvider.visible),
+    );
+  }
+}
+
+Widget bottomNavigationBarJobButton(BottomNavigationBarProvider bottomNavigationBarProvider, BuildContext context) {
+  return GestureDetector(
+    onTap: () {
+      bottomNavigationBarProvider.currentIndex = 0;
+      bottomNavigationBarProvider.visible = true;
+    },
+    child: buttonNavBar(context, bottomNavigationBarProvider, 'Jobs', bottomNavigationBarProvider.visible),
+  );
+}
+
+Widget buttonNavBar(
+    BuildContext context, BottomNavigationBarProvider bottomNavigationBarProvider, String text, bool visible) {
+  return Container(
+    height: 75,
+    width: (MediaQuery.of(context).size.width - 50) / 2,
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Text(
+          text,
+          style: AppTextStyle.body14w700.copyWith(
+            color: visible ? AppColor.black : AppColor.grey,
+          ),
+        ),
+        Visibility(
+          visible: visible,
+          child: CircleAvatar(
+            backgroundColor: AppColor.black,
+            radius: 4,
+          ),
+        ),
+      ],
+    ),
+  );
 }
