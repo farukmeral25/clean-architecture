@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_architecture/core/constant/theme/appTheme/theme.dart';
+import 'package:flutter_clean_architecture/feature/jobs/view/widgets/developer_your_application_page_widgets/developer_your_application_app_bar.dart';
 import 'package:flutter_clean_architecture/feature/jobs/view/widgets/developer_your_application_page_widgets/developer_your_application_body.dart';
 
 class DeveloperYourApplicationPage extends StatelessWidget {
@@ -11,11 +12,7 @@ class DeveloperYourApplicationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.skin,
-      appBar: AppBar(
-        backgroundColor: AppColor.skin,
-        elevation: 0,
-        toolbarHeight: 0,
-      ),
+      appBar: DeveloperYourApplicationAppBar(),
       body: DeveloperYourApplicationBody(),
     );
   }

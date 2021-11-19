@@ -9,6 +9,7 @@ import 'package:flutter_clean_architecture/feature/authenticate/login/domain/use
 import 'package:flutter_clean_architecture/feature/authenticate/login/domain/usecase/remove_data_user.dart';
 import 'package:flutter_clean_architecture/feature/authenticate/login/domain/usecase/save_data_user.dart';
 import 'package:flutter_clean_architecture/feature/authenticate/login/viewmodel/login_provider.dart';
+import 'package:flutter_clean_architecture/feature/bottomNavigationBar/viewmodel/bottom_navigation_bar_provider.dart';
 import 'package:flutter_clean_architecture/feature/jobs/viewmodel/jobs_provider.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -28,13 +29,15 @@ Future<void> init() async {
   serviceLocator.registerLazySingleton(() => RemoveDataFromKeyUsecase(repository: serviceLocator()));
   serviceLocator.registerLazySingleton(() => SaveDataFromKeyUsecase(repository: serviceLocator()));
 
+  //? BottomNavigationBar
+  serviceLocator.registerLazySingleton(() => BottomNavigationBarProvider());
+
   //? Login
   //* Provider
   serviceLocator.registerLazySingleton(() =>
       LoginProvider(getDataUser: serviceLocator(), removeDataUser: serviceLocator(), saveDataUser: serviceLocator()));
 
   //* Repo
-
   serviceLocator.registerLazySingleton<LoginRepository>(
     () => LoginRepositoryImpl(
       getDataFromKeyUsecase: serviceLocator(),
@@ -44,7 +47,6 @@ Future<void> init() async {
   );
 
   //* Usecase
-
   serviceLocator.registerLazySingleton(() => GetDataUserUsecase(repository: serviceLocator()));
   serviceLocator.registerLazySingleton(() => RemoveDataUserUsecase(repository: serviceLocator()));
   serviceLocator.registerLazySingleton(() => SaveDataUserUsecase(repository: serviceLocator()));
